@@ -1,0 +1,20 @@
+<a [routerLink]="['/heroes']" class="btn btn-outline-secondary btn-block">
+    Regresar
+</a> 
+<h2>
+    Resultado de la busqueda de: <small> {{ termino }}</small>
+</h2>
+<hr>
+<div class="row animated fadeIn fast" **ngIf="heroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            No Existen resultados  con el término: {{termino}} 
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+
+    <app-heroe-tarjeta [index]="heroe.idx" [heroe]="heroe" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+
+
+  </div>
